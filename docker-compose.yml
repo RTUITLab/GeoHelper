@@ -3,8 +3,6 @@ version: '3.8'
 services:
   proxy:
     image: rtuitlab/geohelper-proxy
-    ports:
-    - 3000:3000
   front:
     image: rtuitlab/geohelper-front
 

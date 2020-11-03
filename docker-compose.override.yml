@@ -3,6 +3,8 @@ version: '3.8'
 services:
   proxy:
     build: Proxy
+    ports:
+    - 3000:3000
   front:
     build: GeoHelper-Front
     ports:
