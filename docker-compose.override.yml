@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  proxy:
+    build: Proxy
+  front:
+    build: GeoHelper-Front
+
