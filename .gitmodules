@@ -1,0 +1,6 @@
+[submodule "GeoHelper-Front"]
+	path = GeoHelper-Front
+	url = https://github.com/RTUITLab/GeoHelper-Front.git
+[submodule "GeoHelper-Back"]
+	path = GeoHelper-Back
+	url = https://github.com/RTUITLab/GeoHelper-Back.git
