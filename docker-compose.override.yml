@@ -5,4 +5,5 @@ services:
     build: Proxy
   front:
     build: GeoHelper-Front
-
+    ports:
+    - 3002:3002
