@@ -7,14 +7,15 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
 
+pool:
+  vmImage: 'ubuntu-latest'
+
 stages:
 - stage: Build
   displayName: Build image
   jobs:  
   - job: Build
     displayName: Build
-    pool:
-      vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
       displayName: Build an image
@@ -28,3 +29,14 @@ stages:
           $(tag)
           latest
         addPipelineData: false
+- stage: Deploy
+  displayName: Deploy service
+  jobs:
+  - job: Deploy
+    steps:
+    - task: SSH@0
+      inputs:
+        sshEndpoint: 'swarm manager'
+        runOptions: 'commands'
+        commands: 'docker service update --image rtuitlab/geohelper-proxy:$(tag) geohelper_proxy'
+        readyTimeout: '20000'
