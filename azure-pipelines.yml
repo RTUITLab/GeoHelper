@@ -38,5 +38,5 @@ stages:
       inputs:
         sshEndpoint: 'swarm manager'
         runOptions: 'commands'
-        commands: 'docker service update --image rtuitlab/geohelper-proxy:$(tag) geohelper_proxy'
+        commands: 'docker service update --image rtuitlab/geohelper-proxy:$(tag) geohelper_proxy --with-registry-auth'
         readyTimeout: '20000'
