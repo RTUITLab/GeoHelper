@@ -2,8 +2,9 @@ version: '3.8'
 
 services:
   proxy:
+    image: registry.rtuitlab.dev/geohelper/proxy
     networks:
-    - net
+      - net
     deploy:
       resources:
         limits:
@@ -18,8 +19,9 @@ services:
           max-size: "200k"
           max-file: "10"
   front:
+    image: registry.rtuitlab.dev/geohelper/front
     networks:
-    - net
+      - net
     deploy:
       resources:
         limits:
@@ -35,7 +37,7 @@ services:
           max-file: "10"
   back:
     networks:
-    - net
+      - net
 networks:
   net:
     driver: overlay
