@@ -23,6 +23,6 @@
     > [Google api key documentation](https://developers.google.com/maps/documentation/javascript/get-api-key)
 2. Run command
     ```bash
-    docker compose --env-file ./.env -f GeoHelper-Back/docker-compose.prod.yml -f GeoHelper-Front/docker-compose.prod.yml config > ./stack.yml
+    docker compose --env-file .env -f ./GeoHelper-Back/docker-compose.yml -f ./GeoHelper-Back/docker-compose.prod.yml -f ./GeoHelper-Front/docker-compose.yml -f ./GeoHelper-Front/docker-compose.prod.yml config > stack.yml
     ```
 3. Use generated `stack.yml` on your docker swarm cluster
